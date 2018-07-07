@@ -2,6 +2,8 @@ FROM alpine:3.7
 
 RUN apk add --no-cache curl
 
-COPY . /tmp
+run mkdir /app
+COPY save_results.sh /app
+WORKDIR /app
 
-ENTRYPOINT ["/usr/bin/curl"]
+ENTRYPOINT ["sh","save_results.sh"]
