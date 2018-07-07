@@ -1,3 +1,8 @@
 #!/bin/bash
+SITE="$1"
+FILE="$2"
 
-/usr/bin/curl $0 > /$1/results.ip
+echo "$SITE"
+echo "$FILE"
+
+/usr/bin/curl -s "$SITE" > "$FILE" 
